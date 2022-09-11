@@ -1,0 +1,10 @@
+footer {
+  padding: 1rem 0;
+  background: var(--footer);
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--branco);
+}

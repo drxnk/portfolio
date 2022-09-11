@@ -1,0 +1,171 @@
+section#contato {
+  background-color: var(--preto);
+
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem 0 0.5rem 0;
+}
+
+.contato-container {
+  display: flex;
+  width: 100%;
+}
+
+.contato-textos {
+  text-align: left;
+  width: 49%;
+  margin-left: 1%;
+}
+
+.contato-textos h1 {
+  color: var(--vermelho);
+  font-size: var(--extra-grande);
+  line-height: 1.5;
+}
+
+.contato-textos h1:after {
+  content: "!";
+  color: var(--azul);
+}
+
+.contato-textos h1:before {
+  content: "";
+  width: 0px;
+  height: 10px;
+  display: block;
+  margin-top: -1.25rem;
+  margin-left: -2rem;
+  background: var(--azul);
+
+  animation: barra-before 8s infinite ease-in-out;
+}
+
+@keyframes barra-before {
+  0% {
+    background: var(--azul);
+    width: 0%;
+  }
+  48% {
+    background: var(--azul);
+    width: 62%;
+  }
+  72% {
+    background-color: var(--azul);
+    width: 93%;
+  }
+}
+
+.contato-textos h2 {
+  color: var(--azul);
+  font-size: var(--media);
+  line-height: 2;
+
+  margin-top: 2rem;
+}
+
+.contato-textos h3 {
+  color: var(--vermelho);
+  font-size: var(--media);
+  line-height: 1;
+
+  margin-top: 2rem;
+}
+
+.contato-textos h3::after {
+  content: "☕";
+}
+
+.contato-textos ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem 0;
+  flex-direction: column;
+
+  margin-top: 3rem;
+}
+
+.contato-textos ul li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.contato-textos ul li:before {
+  content: ">";
+  color: var(--vermelho);
+  transform: translateX(-2px);
+
+  animation: seta-contato 1s infinite ease-in-out;
+}
+
+@keyframes seta-contato {
+  0% {
+  color: var(--vermelho);
+
+    transform: translateX(-2px);
+  }
+  50% {
+  color: var(--azul);
+
+    transform: translateX(5px);
+  }
+}
+
+.contato-textos ul li a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--branco-cinza);
+
+  transition: all 0.8s ease-in-out;
+}
+.contato-textos ul li a:hover {
+  color: var(--azul);
+}
+
+.contato-textos ul li a img {
+  z-index: 1;
+  width: 42px;
+}
+
+.img-ctt {
+  width: 100%;
+  border-radius: 11px;
+  z-index: 1;
+  background: var(--branco);
+
+  transition: all 0.8s ease-in-out;
+}
+
+.img-ctt:hover {
+  background: var(--azul);
+}
+
+
+
+
+.contato-img {
+  width: 50%;
+  transform: translateX(100px);
+
+}
+.contato-img img {
+  transform: rotateY(180deg);
+  width: 100%;
+}
+
+
+
+@media (max-width: 1350px) {
+  .contato-img {
+    display: none;
+  }
+  .contato-textos {
+    text-align: center;
+    width: 99%;
+    margin-left: 1%;
+  }
+  .contato-textos ul {
+    align-items: center;
+  }
+}

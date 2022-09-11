@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+  scroll-behavior: smooth;
+
+  cursor: default;
+}
+
+*::selection {
+  background: #05b3f2;
+}
+html {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--preto);
+  overflow-x: hidden;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 25px var(--preto); 
+  border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--vermelho); 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cinza); 
+}
+
+:root {
+  --vermelho:#bf0449;
+  --vermelho-laranja:#fe4242;
+  --azul: #05b3f2;
+  --branco:#ddd;
+  --branco-cinza:#ccc;
+  --cinza:#555;
+  --cinza-preto: #222;
+  --preto: #111;
+
+  --footer: #0d0d0d;
+
+
+  --extra-large-grande: 8rem ;
+  --extra-grande: 5rem;
+  --grande:3rem;
+  --media: 1.5rem;
+  --normal:1rem;
+  --pequena:.875rem;
+  --extra-pequena:.5rem;
+}
+
