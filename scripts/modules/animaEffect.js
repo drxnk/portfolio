@@ -10,15 +10,11 @@ export default function initAnimaEffect() {
     targetData.forEach(function (el) {
       if (windowTop > el.offsetTop) {
         el.classList.add(animationClass);
-      } else {
-        el.classList.remove(animationClass);
       }
     });
 
     if (windowTop > contatoHand.offsetTop) {
       contatoHand.classList.add(animationClassHand);
-    } else {
-      contatoHand.classList.remove(animationClassHand);
     }
   }
 
