@@ -1,18 +1,4 @@
 export default function initToTopButton() {
-  const debounce = function (func, wait, immediate) {
-    let timeout;
-    return function (...args) {
-      const context = this;
-      const later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
 
   const targetFormacao = document.getElementById("formacao");
   const toTopBtn = document.querySelector(".to-top");
@@ -29,7 +15,7 @@ export default function initToTopButton() {
 
   toTopButtonAppear();
 
-  window.addEventListener("scroll", debounce(function () {
+  window.addEventListener("scroll", function () {
     toTopButtonAppear();
-  }, 50));
+  });
 }
