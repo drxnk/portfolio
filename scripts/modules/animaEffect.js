@@ -1,4 +1,19 @@
 export default function initAnimaEffect() {
+  const debounce = function (func, wait, immediate) {
+    let timeout;
+    return function (...args) {
+      const context = this;
+      const later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      const callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+
   const targetData = document.querySelectorAll("[data-anima]");
   const contatoHand = document.querySelector("[data-animat='right-hand']");
   const animationClass = "animate";
@@ -7,7 +22,6 @@ export default function initAnimaEffect() {
   function animationScroll() {
     const windowTop = window.pageYOffset + (window.innerHeight * 3) / 4;
 
-    
     targetData.forEach(function (el) {
       if (windowTop > el.offsetTop) {
         el.classList.add(animationClass);
@@ -16,16 +30,16 @@ export default function initAnimaEffect() {
       }
     });
 
-    if(windowTop > contatoHand.offsetTop) {
-      contatoHand.classList.add(animationClassHand)
+    if (windowTop > contatoHand.offsetTop) {
+      contatoHand.classList.add(animationClassHand);
     } else {
-      contatoHand.classList.remove(animationClassHand)
+      contatoHand.classList.remove(animationClassHand);
     }
   }
 
   animationScroll();
 
-  window.addEventListener("scroll", function () {
+  window.addEventListener("scroll", debounce(function () {
     animationScroll();
-  });
+  }, 50));
 }
