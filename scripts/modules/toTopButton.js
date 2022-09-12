@@ -1,25 +1,20 @@
 export default function initToTopButton() {
-  const formacao = document.getElementById("formacao");
-  const toTop = document.querySelector(".to-top");
+  const targetFormacao = document.getElementById("formacao");
+  const toTopBtn = document.querySelector(".to-top");
 
-  var userHasScrolled = false;
-  window.onscroll = function (e) {
-    userHasScrolled = true;
-  };
+  function toTopButtonAppear() {
+    const windowTop = window.pageYOffset + (window.innerHeight * 3) / 4;
 
-  setInterval(() => {
-    // console.log(window.pageYOffset - formacao.getBoundingClientRect().height - 100)
-    if (userHasScrolled) {
-      if (
-        window.pageYOffset - formacao.getBoundingClientRect().height - 100 >
-        200
-      ) {
-        toTop.classList.remove("inativo");
-        userHasScrolled = false;
-      } else {
-        toTop.classList.add("inativo");
-        userHasScrolled = false;
-      }
+    if (windowTop > targetFormacao.offsetTop) {
+      toTopBtn.classList.remove("inativo");
+    } else {
+      toTopBtn.classList.add("inativo");
     }
-  }, 100);
+  }
+
+  toTopButtonAppear();
+
+  window.addEventListener("scroll", function () {
+    toTopButtonAppear();
+  });
 }
