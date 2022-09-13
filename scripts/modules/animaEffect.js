@@ -4,7 +4,7 @@ function _0x2c2d(_0xf9e8ac,_0x35ac5a){const _0x31269a=_0x5c73();return _0x2c2d=f
 */
 
 // Normal**
-
+/*
 export default function initAnimaEffect() {
   const targetData = document.querySelectorAll("[data-anima]");
   const contatoHand = document.querySelector("[data-animat='right-hand']");
@@ -31,3 +31,8 @@ export default function initAnimaEffect() {
     animationScroll();
   });
 }
+*/
+
+// Minify
+
+export default function initAnimaEffect(){const t=document.querySelectorAll("[data-anima]"),n=document.querySelector("[data-animat='right-hand']");function a(){const a=window.pageYOffset+3*window.innerHeight/4;t.forEach((function(t){a>t.offsetTop&&t.classList.add("animate")})),a>n.offsetTop&&n.classList.add("animate-hand")}a(),window.addEventListener("scroll",(function(){a()}))}

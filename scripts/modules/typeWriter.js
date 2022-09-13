@@ -6,6 +6,7 @@ function _0x3948(){const _0x1e37d7=['ErPWR','2508682hiodJd','querySelec','fjpzY'
 
 // Normal
 
+/*
 export default function initTypeWriter() {
   const textoP = document.querySelector(".textos-sobre p");
 
@@ -23,3 +24,8 @@ export default function initTypeWriter() {
 
   typeWriter(textoP, 35);
 }
+*/
+
+// Minify
+
+export default function initTypeWriter(){!function(e,t){const n=e.innerHTML.split("");e.innerHTML="",n.forEach(((n,i)=>{setTimeout((()=>{e.innerHTML+=n}),t*i)}))}(document.querySelector(".textos-sobre p"),35)}

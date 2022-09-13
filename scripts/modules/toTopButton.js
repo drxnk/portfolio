@@ -5,6 +5,7 @@ function _0x5c25(_0x27d4b3,_0x19ffb7){const _0x1b4888=_0x5302();return _0x5c25=f
 */
 
 // Normal
+/*
 export default function initToTopButton() {
   const targetFormacao = document.getElementById("formacao");
   const toTopBtn = document.querySelector(".to-top");
@@ -25,3 +26,8 @@ export default function initToTopButton() {
     toTopButtonAppear();
   });
 }
+*/
+
+// Minify
+
+export default function initToTopButton(){const t=document.getElementById("formacao"),o=document.querySelector(".to-top");function n(){window.pageYOffset+3*window.innerHeight/4>t.offsetTop?o.classList.remove("inativo"):o.classList.add("inativo")}n(),window.addEventListener("scroll",(function(){n()}))}
